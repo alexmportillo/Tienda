@@ -136,32 +136,50 @@ namespace TiendaOrdenadores
 
             int opcion = MenuElegirDispositivo();
             List<string> piezas = null;
+            int temporal;
             switch (opcion)
             {
                 case 1:
                     String estaReparado;
-                    String Fuente;
-                    String Modelo;
-                    String Marca;
-                    String Pulgadas;
-                    String Procesador;
+                    String FuentePC;
+                    String ModeloPC;
+                    String MarcaPC;
+                    String PulgadasPC;
+                    String ProcesadorPC;
+                    bool estaReparadoPC=false;
                     Console.WriteLine("Ram:");
-                    estaReparado = Console.ReadLine();
+                    //estaReparado = Console.ReadLine();
                     Console.WriteLine("Fuente:");
-                    Fuente = Console.ReadLine();
+                    FuentePC = Console.ReadLine();
                     Console.WriteLine("Modelo:");
-                    Modelo = Console.ReadLine();
+                    ModeloPC = Console.ReadLine();
                     Console.WriteLine("Marca:");
-                    Marca = Console.ReadLine();
+                    MarcaPC = Console.ReadLine();
                     Console.WriteLine("Pulgadas:");
-                    Pulgadas = Console.ReadLine();
+                    PulgadasPC = Console.ReadLine();
                     Console.WriteLine("Modelo:");
-                    Modelo = Console.ReadLine();
+                    ModeloPC = Console.ReadLine();
                     Console.WriteLine("Procesador:");
-                    Procesador = Console.ReadLine();
-
+                    ProcesadorPC = Console.ReadLine();
+                    Console.WriteLine("EstaReparado: (1. si / 2. no)");
+                    do
+                    {
+                        temporal = ValidarNumero();
+                    } while (temporal < 1 || temporal > 2);
+                    if (temporal == 1)
+                    {
+                        estaReparadoPC = true;
+                    }
+                    else if (temporal == 2)
+                    {
+                        estaReparadoPC = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("[ERROR] Nada que decir ");
+                    }
                     //Debe ir los valores siempre ordenados de la misma forma que en la clase Correspondiente(si no Peta)
-                    PC Pc = new PC(estaReparado, Fuente, piezas, Procesador, SO, Modelo, Marca, Pulgadas);
+                    PC Pc = new PC(estaReparadoPC, FuentePC, piezas, ProcesadorPC, SO, ModeloPC, MarcaPC, PulgadasPC);
                     //Añadimos ListaPc Pc a la lista "ListaPC"
                     listaPC.Add(Pc);
 
@@ -173,6 +191,7 @@ namespace TiendaOrdenadores
                     String MarcaMV;
                     float PulgadasMV;
                     float ramMV;
+                    bool estaReparadoMV=false;
                     Console.WriteLine("Modelo:");
                     ModeloMV = Console.ReadLine();
                     Console.WriteLine("Marca:");
@@ -182,10 +201,26 @@ namespace TiendaOrdenadores
                     Console.WriteLine("Modelo:");
                     ModeloMV = Console.ReadLine();
                     Console.WriteLine("Reparado:");
-                    estaReparado = Console.ReadLine();
-                    ramMV= Console.Read();
+                    Console.WriteLine("EstaReparado: (1. si / 2. no)");
+                    do
+                    {
+                        temporal = ValidarNumero();
+                    } while (temporal < 1 || temporal > 2);
+                    if (temporal == 1)
+                    {
+                        estaReparadoMV = true;
+                    }
+                    else if (temporal == 2)
+                    {
+                        estaReparadoMV = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("[ERROR] Nada que decir ");
+                    }
+                    ramMV = Console.Read();
                     //Debe ir los valores siempre ordenados de la misma forma que en la clase Correspondiente(si no Peta)
-                    Movil MV = new Movil(MarcaMV,ModeloMV, PulgadasMV, ramMV, estaReparado);
+                    Movil MV = new Movil(MarcaMV,ModeloMV, PulgadasMV, ramMV, estaReparadoMV);
                     //Añadimos ListaPc Pc a la lista "ListaPC"
                     listaPC.Add(MV);
                     break;
@@ -197,6 +232,7 @@ namespace TiendaOrdenadores
                     float PulgadasPORT;
                     String ProcesadorPORT;
                     float ramPORT;
+                    bool estaReparadoPORT=false;
                     Console.WriteLine("Modelo:");
                     ModeloPORT = Console.ReadLine();
                     Console.WriteLine("Procesador:");
@@ -207,11 +243,26 @@ namespace TiendaOrdenadores
                     PulgadasPORT = Console.Read();
                     Console.WriteLine("Modelo:");
                     ModeloPORT = Console.ReadLine();
-                    Console.WriteLine("Reparado:");
-                    estaReparado = Console.ReadLine();
+                    Console.WriteLine("EstaReparado: (1. si / 2. no)");
+                    do
+                    {
+                        temporal = ValidarNumero();
+                    } while (temporal < 1 || temporal > 2);
+                    if (temporal == 1)
+                    {
+                        estaReparadoPORT = true;
+                    }
+                    else if (temporal == 2)
+                    {
+                        estaReparadoPORT = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("[ERROR] Nada que decir ");
+                    }
                     ramPORT = Console.Read();
                     //Debe ir los valores siempre ordenados de la misma forma que en la clase Correspondiente(si no Peta)
-                    Portatil PORT = new Portatil(ramPORT, ProcesadorPORT,SO,MarcaPORT, ModeloPORT, PulgadasPORT, estaReparado);
+                    Portatil PORT = new Portatil(ramPORT, ProcesadorPORT,SO,MarcaPORT, ModeloPORT, PulgadasPORT, estaReparadoPORT);
                     //Añadimos ListaPc Pc a la lista "ListaPC"
                     listaPC.Add(PORT);
                     break;
@@ -221,6 +272,7 @@ namespace TiendaOrdenadores
                     String ModeloTB;
                     String MarcaTB;
                     float PulgadasTB;
+                    bool estaReparadoTB=false;
                     Console.WriteLine("Modelo:");
                     ModeloTB = Console.ReadLine();
                     Console.WriteLine("Marca:");
@@ -229,11 +281,26 @@ namespace TiendaOrdenadores
                     PulgadasTB = Console.Read();
                     Console.WriteLine("Modelo:");
                     ModeloTB = Console.ReadLine();
-                    Console.WriteLine("Reparado:");
-                    estaReparado = Console.ReadLine();
+                    Console.WriteLine("EstaReparado: (1. si / 2. no)");
+                    do
+                    {
+                        temporal = ValidarNumero();
+                    } while (temporal < 1 || temporal > 2);
+                    if (temporal == 1)
+                    {
+                        estaReparadoTB = true;
+                    }
+                    else if (temporal == 2)
+                    {
+                        estaReparadoTB = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("[ERROR] Nada que decir ");
+                    }
 
                     //Debe ir los valores siempre ordenados de la misma forma que en la clase Correspondiente(si no Peta)
-                    Tablet TB = new Tablet(MarcaTB, ModeloTB, PulgadasTB, estaReparado);
+                    Tablet TB = new Tablet(MarcaTB, ModeloTB, PulgadasTB, estaReparadoTB);
                     //Añadimos ListaPc Pc a la lista "ListaPC"
                     listaPC.Add(TB);
                     break;

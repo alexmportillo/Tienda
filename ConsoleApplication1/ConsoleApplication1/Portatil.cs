@@ -19,7 +19,7 @@ namespace TiendaOrdenadores
         public Portatil(RAM ram, String procesador, SO so, String marca, String modelo, float pulgadas, bool estaReparado)
             : base(marca, modelo, pulgadas, estaReparado)
         {
-            _Ram = ram;
+            _Ram = ram-1;
             _Procesador = procesador;
             _SO = so;
         }
