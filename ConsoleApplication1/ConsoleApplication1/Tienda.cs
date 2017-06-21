@@ -200,7 +200,7 @@ namespace TiendaOrdenadores
                     PulgadasMV = Console.Read();
                     Console.WriteLine("Modelo:");
                     ModeloMV = Console.ReadLine();
-                    Console.WriteLine("Reparado:");
+                    
                     Console.WriteLine("EstaReparado: (1. si / 2. no)");
                     do
                     {
