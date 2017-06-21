@@ -91,7 +91,7 @@ namespace TiendaOrdenadores
                         break;
 
                     case 2:
-
+                        buscarDispositivo();
                         break;
 
                     case 3:
@@ -304,6 +304,36 @@ namespace TiendaOrdenadores
                     //Añadimos ListaPc Pc a la lista "ListaPC"
                     listaPC.Add(TB);
                     break;
+            }
+        }
+
+        //Buscar Dispositivo
+
+        private void buscarDispositivo()
+        {
+
+
+            Console.WriteLine("Nombre de la mascota: ");
+            String temporal = Console.ReadLine();
+            Dispositivo Buscar = null;
+
+            foreach (Dispositivo Disp in listaPC)
+            {
+                if (Disp.GetSetMarca.ToUpper().Equals(temporal.ToUpper()))
+                {
+                    Buscar = Disp;
+                }
+            }
+            // Si se encuentra, lo muestra.
+            if (Buscar != null && listaPC.Contains(Buscar))
+            {
+
+                Console.WriteLine(Buscar.ToString());
+
+            }
+            else
+            {
+                Console.WriteLine("El dispositivo: " + temporal + " no aparece en la base de datos");
             }
         }
     }
