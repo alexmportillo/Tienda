@@ -11,6 +11,7 @@ namespace TiendaOrdenadores
     {
         private String _Nombre;
         public List<Dispositivo> listaPC;
+        
 
         public Tienda(string Nombre)
         {
@@ -170,21 +171,21 @@ namespace TiendaOrdenadores
 
                     String ModeloMV;
                     String MarcaMV;
-                    String PulgadasMV;
-
+                    float PulgadasMV;
+                    float ramMV;
                     Console.WriteLine("Modelo:");
                     ModeloMV = Console.ReadLine();
                     Console.WriteLine("Marca:");
                     MarcaMV = Console.ReadLine();
                     Console.WriteLine("Pulgadas:");
-                    PulgadasMV = Console.ReadLine();
+                    PulgadasMV = Console.Read();
                     Console.WriteLine("Modelo:");
                     ModeloMV = Console.ReadLine();
                     Console.WriteLine("Reparado:");
                     estaReparado = Console.ReadLine();
-                    RAM = Console.ReadLine();
+                    ramMV= Console.Read();
                     //Debe ir los valores siempre ordenados de la misma forma que en la clase Correspondiente(si no Peta)
-                    Movil MV = new Movil(ModeloMV, MarcaMV, RAM, PulgadasMV, estaReparado);
+                    Movil MV = new Movil(MarcaMV,ModeloMV, PulgadasMV, ramMV, estaReparado);
                     //Añadimos ListaPc Pc a la lista "ListaPC"
                     listaPC.Add(MV);
                     break;
@@ -193,8 +194,9 @@ namespace TiendaOrdenadores
 
                     String ModeloPORT;
                     String MarcaPORT;
-                    String PulgadasPORT;
+                    float PulgadasPORT;
                     String ProcesadorPORT;
+                    float ramPORT;
                     Console.WriteLine("Modelo:");
                     ModeloPORT = Console.ReadLine();
                     Console.WriteLine("Procesador:");
@@ -202,14 +204,14 @@ namespace TiendaOrdenadores
                     Console.WriteLine("Marca:");
                     MarcaPORT = Console.ReadLine();
                     Console.WriteLine("Pulgadas:");
-                    PulgadasPORT = Console.ReadLine();
+                    PulgadasPORT = Console.Read();
                     Console.WriteLine("Modelo:");
                     ModeloPORT = Console.ReadLine();
                     Console.WriteLine("Reparado:");
                     estaReparado = Console.ReadLine();
-                    RAM = Console.ReadLine();
+                    ramPORT = Console.Read();
                     //Debe ir los valores siempre ordenados de la misma forma que en la clase Correspondiente(si no Peta)
-                    Portatil PORT = new Portatil(ModeloPORT, ProcesadorPORT, MarcaPORT, RAM, PulgadasPORT, estaReparado);
+                    Portatil PORT = new Portatil(ramPORT, ProcesadorPORT,SO,MarcaPORT, ModeloPORT, PulgadasPORT, estaReparado);
                     //Añadimos ListaPc Pc a la lista "ListaPC"
                     listaPC.Add(PORT);
                     break;
