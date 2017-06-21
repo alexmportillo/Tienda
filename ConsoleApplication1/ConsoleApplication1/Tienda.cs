@@ -140,7 +140,7 @@ namespace TiendaOrdenadores
             switch (opcion)
             {
                 case 1:
-                    String estaReparado;
+                    
                     String FuentePC;
                     String ModeloPC;
                     String MarcaPC;
@@ -273,6 +273,7 @@ namespace TiendaOrdenadores
                     String MarcaTB;
                     float PulgadasTB;
                     bool estaReparadoTB=false;
+                    float ramTB;
                     Console.WriteLine("Modelo:");
                     ModeloTB = Console.ReadLine();
                     Console.WriteLine("Marca:");
@@ -300,7 +301,7 @@ namespace TiendaOrdenadores
                     }
 
                     //Debe ir los valores siempre ordenados de la misma forma que en la clase Correspondiente(si no Peta)
-                    Tablet TB = new Tablet(MarcaTB, ModeloTB, PulgadasTB, estaReparadoTB);
+                    Tablet TB = new Tablet(MarcaTB, ModeloTB, PulgadasTB, ramTB, estaReparadoTB);
                     //Añadimos ListaPc Pc a la lista "ListaPC"
                     listaPC.Add(TB);
                     break;
